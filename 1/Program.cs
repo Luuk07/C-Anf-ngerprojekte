@@ -1,36 +1,62 @@
-﻿namespace C_Anfangsprojekt1
+﻿namespace Anfängerprojekt3
 {
     internal class Program
     {
         static void Main(string[] args)
+
         {
+            Console.WriteLine("Gib eine Zahl ein");
+            int number = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Geben Sie fünf Werte an");
-            string wertOne = Console.ReadLine();
-            string wertTwo = Console.ReadLine();
-            string wertThree = Console.ReadLine();
-            string wertFour = Console.ReadLine();
-            string wertFive = Console.ReadLine();
-
-          
-            int valueOne = int.Parse(wertOne);
-            int valueTwo = int.Parse(wertTwo);
-            int valueThree = int.Parse(wertThree);
-            int valueFour = int.Parse(wertFour);
-            int valueFive = int.Parse(wertFive);
-
-            int[] values = {valueOne, valueTwo, valueThree, valueFour, valueFive };
-            int value = 0;
-            foreach (int n in values)
+            if (number >= 1)
             {
-                value += n;
-                
+                Console.WriteLine("Deine Nummer ist positiv");
+
             }
-            Console.WriteLine(value);
+            else if (number == 0)
+            {
+                Console.WriteLine("Deine Nummer ist Null");
+            }
+            else if (number <= 0)
+            {
+                Console.WriteLine("Deine Zahl ist negativ");
+            }
+            Passwordcheck();
+            
+        }
 
 
+        static void Passwordcheck()
+        {
+            Console.WriteLine("Gib deinen Benutzernamen ein");
+            string username = Console.ReadLine();
 
+            Console.WriteLine("Gib dein Passwort ein");
+            string password = Console.ReadLine();
 
+            string rllogin = username + password;
+
+            Console.WriteLine("Dein Benutzername ist: "+ username);
+            Console.WriteLine("Dein Passwort ist: " + password);
+            Console.WriteLine();
+            Console.WriteLine("Gib deinen Benutzernamen erneut ein");
+            string input_un = Console.ReadLine();
+            Console.WriteLine("Gib dein Passwort erneut ein");
+            string input_pw = Console.ReadLine();
+
+            string login = input_un + input_pw;
+
+            if (login == rllogin)
+            {
+                Console.WriteLine("Zugriff erlaubt");
+            }
+            else
+            {
+                Console.WriteLine("Zugriff verweigert");
+            }
+
+            
+            
 
 
         }
